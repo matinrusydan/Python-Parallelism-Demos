@@ -1,0 +1,162 @@
+
+=== Menjalankan Thread Parallelism.py ===
+
+Daftar pekerjaan (file, durasi): [(1, 1.71), (2, 0.98), (3, 1.93), (4, 0.76), (5, 1.85), (6, 0.71), (7, 1.33), (8, 1.02), (9, 0.94), (10, 1.26)]
+
+--- Menjalankan Serial ---
+Mulai mengunduh file 1...
+Selesai mengunduh file 1.
+Mulai mengunduh file 2...
+Selesai mengunduh file 2.
+Mulai mengunduh file 3...
+Selesai mengunduh file 3.
+Mulai mengunduh file 4...
+Selesai mengunduh file 4.
+Mulai mengunduh file 5...
+Selesai mengunduh file 5.
+Mulai mengunduh file 6...
+Selesai mengunduh file 6.
+Mulai mengunduh file 7...
+Selesai mengunduh file 7.
+Mulai mengunduh file 8...
+Selesai mengunduh file 8.
+Mulai mengunduh file 9...
+Selesai mengunduh file 9.
+Mulai mengunduh file 10...
+Selesai mengunduh file 10.
+Waktu eksekusi: 12.4932 detik
+
+--- Menjalankan Thread (2) ---
+Mulai mengunduh file 1...
+Mulai mengunduh file 2...
+Selesai mengunduh file 2.
+Mulai mengunduh file 3...
+Selesai mengunduh file 1.
+Mulai mengunduh file 4...
+Selesai mengunduh file 4.
+Mulai mengunduh file 5...
+Selesai mengunduh file 3.
+Mulai mengunduh file 6...
+Selesai mengunduh file 6.
+Mulai mengunduh file 7...
+Selesai mengunduh file 5.
+Mulai mengunduh file 8...
+Selesai mengunduh file 7.
+Mulai mengunduh file 9...
+Selesai mengunduh file 8.
+Mulai mengunduh file 10...
+Selesai mengunduh file 9.
+Selesai mengunduh file 10.
+Waktu eksekusi: 6.6039 detik
+
+--- Menjalankan Thread (4) ---
+Mulai mengunduh file 1...
+Mulai mengunduh file 2...
+Mulai mengunduh file 3...
+Mulai mengunduh file 4...
+Selesai mengunduh file 4.
+Mulai mengunduh file 5...
+Selesai mengunduh file 2.
+Mulai mengunduh file 6...
+Selesai mengunduh file 6.
+Mulai mengunduh file 7...
+Selesai mengunduh file 1.
+Mulai mengunduh file 8...
+Selesai mengunduh file 3.
+Mulai mengunduh file 9...
+Selesai mengunduh file 5.
+Mulai mengunduh file 10...
+Selesai mengunduh file 8.
+Selesai mengunduh file 9.
+Selesai mengunduh file 7.
+Selesai mengunduh file 10.
+Waktu eksekusi: 3.8698 detik
+
+--- Menjalankan Thread (8) ---
+Mulai mengunduh file 1...
+Mulai mengunduh file 2...
+Mulai mengunduh file 3...
+Mulai mengunduh file 4...
+Mulai mengunduh file 5...
+Mulai mengunduh file 6...
+Mulai mengunduh file 7...
+Mulai mengunduh file 8...
+Selesai mengunduh file 6.
+Mulai mengunduh file 9...
+Selesai mengunduh file 4.
+Mulai mengunduh file 10...
+Selesai mengunduh file 2.
+Selesai mengunduh file 8.
+Selesai mengunduh file 7.
+Selesai mengunduh file 9.
+Selesai mengunduh file 1.
+Selesai mengunduh file 5.
+Selesai mengunduh file 3.
+Selesai mengunduh file 10.
+Waktu eksekusi: 2.0231 detik
+
+--- Tabel Hasil ---
+Mode            | Jumlah Thread   | Waktu (s)    | Speedup   
+------------------------------------------------------------
+Serial          | 1               | 12.4932      | 1.00x     
+Thread (2)      | 2               | 6.6039       | 1.89x     
+Thread (4)      | 4               | 3.8698       | 3.23x     
+Thread (8)      | 8               | 2.0231       | 6.18x     
+
+=== Menjalankan Task Parallelism.py ===
+
+--- Menjalankan Serial (1 Proses) ---
+Waktu eksekusi: 0.8083 detik
+
+--- Menjalankan Paralel (2 Proses) ---
+Waktu eksekusi: 0.6410 detik
+
+--- Menjalankan Paralel (4 Proses) ---
+Waktu eksekusi: 0.4482 detik
+
+--- Menjalankan Paralel (8 Proses) ---
+Waktu eksekusi: 0.4382 detik
+
+--- Tabel Hasil ---
+Proses     | Waktu (s)    | Speedup    | Efisiensi 
+--------------------------------------------------
+1 (Serial) | 0.8083       | 1.00x      | 100.00%   
+2          | 0.6410       | 1.26x      | 63.05%    
+4          | 0.4482       | 1.80x      | 45.09%    
+8          | 0.4382       | 1.84x      | 23.06%    
+
+=== Menjalankan Perbandingan Threads vs Tasks.py ===
+
+--- Menguji Aplikasi I/O-Bound ---
+--- Menguji Aplikasi CPU-Bound ---
+
+--- Tabel Hasil Perbandingan ---
+Jenis Aplikasi  | Serial (s)   | Threads (s)  | Processes (s)  | Speedup Threads    | Speedup Processes 
+--------------------------------------------------------------------------------------------------------
+I/O-Bound       | 2.2832       | 0.3019       | 0.5663         | 7.56x              | 4.03x             
+CPU-Bound       | 0.4723       | 0.4642       | 0.3830         | 1.02x              | 1.23x             
+
+=== Menjalankan Hybrid Pipeline.py ===
+
+Loader: Memulai...
+Aggregator: Memulai...
+Loader: Selesai.
+Aggregator: Selesai. Total hasil: 50
+Loader: Memulai...
+Aggregator: Memulai...
+Loader: Selesai.
+Aggregator: Selesai. Total hasil: 50
+Loader: Memulai...
+Aggregator: Memulai...
+Loader: Selesai.
+Aggregator: Selesai. Total hasil: 50
+Loader: Memulai...
+Aggregator: Memulai...
+Loader: Selesai.
+Aggregator: Selesai. Total hasil: 50
+Threads Loader  | Workers CPU  | Jumlah File  | Waktu (s)    | Throughput (file/s) | Avg Latency (s)   
+----------------------------------------------------------------------------------------------------
+1               | 1            | 50           | 5.4515       | 9.17 file/s        | 0.1090            
+1               | 2            | 50           | 2.9747       | 16.81 file/s       | 0.0595            
+1               | 4            | 50           | 2.6136       | 19.13 file/s       | 0.0523            
+1               | 8            | 50           | 2.6637       | 18.77 file/s       | 0.0533            

@@ -89,11 +89,6 @@ def run_pipeline(num_files, num_workers):
     end_time = time.time()
     total_time = end_time - start_time
 
-    # Menghapus file dummy
-    for f in DUMMY_FILES:
-        os.remove(f)
-    os.rmdir('data')
-    
     return total_time
 
 # --- EKSEKUSI DAN PENGUKURAN ---
@@ -102,6 +97,7 @@ if __name__ == '__main__':
 
     results = []
     for workers in [1, 2, 4, 8]:
+        print(f"=== Menjalankan pipeline dengan {workers} workers ===")
         total_time = run_pipeline(NUM_FILES, workers)
         throughput = NUM_FILES / total_time
         avg_latency = total_time / NUM_FILES
