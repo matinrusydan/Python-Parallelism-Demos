@@ -1,5 +1,22 @@
 # Cara Menjalankan Program Praktikum Komputasi Distribusi Paralel
 
+## Instalasi
+### Opsi 1: Clone Repository
+Clone repository ini dari GitHub:
+```bash
+git clone https://github.com/matinrusydan/Python-Parallelism-Demos
+cd Python-Parallelism-Demos
+```
+
+### Opsi 2: Download dari Google Classroom
+Download file-file Python dari tugas yang diupload di Google Classroom dan simpan di folder yang sama.
+- Thread Parallelism.py
+- Task Parallelism.py
+- Perbandingan Threads vs Tasks.py
+- Hybrid Pipeline.py
+- run_all.py
+- README.md
+
 ## Persyaratan
 - Python 3.13 atau lebih baru
 - Modul yang diperlukan: `concurrent.futures`, `threading`, `queue`, `time`, `os`, `random`
